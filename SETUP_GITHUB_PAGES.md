@@ -50,7 +50,7 @@ O deploy acontecerá automaticamente quando:
 Depois de configurado, o teu site ficará disponível em:
 
 ```
-https://P-Chaves.github.io/kings/
+https://p-chaves.github.io/kings/
 ```
 
 ## 🔄 Atualizações Automáticas
