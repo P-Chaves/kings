@@ -1,0 +1,1069 @@
+/**
+ * Estilos principais - Tema clean e responsivo
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --primary: #8B0000;
+  --primary-dark: #6B0000;
+  --secondary: #FFD700;
+  --accent: #DC143C;
+  --danger: #FF4500;
+  --warning: #DC143C;
+  --light: #2d2d2d;
+  --light-2: #1a1a1a;
+  --medium: #888888;
+  --dark: #000000;
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 10px 13px rgba(139, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.8);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================
+   HEADER E FOOTER
+   ======================== */
+
+header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5), inset 0 1px 0 rgba(255, 215, 0, 0.1);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid #8B0000;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+  color: #FFD700;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 3px solid #FFD700;
+}
+
+footer button {
+  margin-top: 1rem;
+}
+
+/* ========================
+   BARRA DE PROGRESSO
+   ======================== */
+
+.progress-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.progress-step {
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 2px solid #8B0000;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 120px;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+}
+
+.progress-step:hover {
+  border-color: #FFD700;
+  background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.progress-step.active {
+  background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
+  color: #FFD700;
+  border-color: #FFD700;
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
+}
+
+.progress-step.completed {
+  background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+  color: #1a1a1a;
+  border-color: #FFD700;
+  font-weight: 700;
+}
+
+.step-label {
+  font-weight: 600;
+  display: block;
+}
+
+/* ========================
+   SECÇÕES
+   ======================== */
+
+[data-section] {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.puzzle-description {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  border-left: 4px solid #8B0000;
+  color: #e0e0e0;
+}
+
+.puzzle-description h2 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-family: Georgia, serif;
+}
+
+.puzzle-description p {
+  color: #d0d0d0;
+  margin-bottom: 0.8rem;
+}
+
+.clues {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+  border: 1px solid #8B0000;
+}
+
+.clues h3 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.clues ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.clues li {
+  padding: 0.5rem 0 0.5rem 2rem;
+  position: relative;
+  color: #d0d0d0;
+}
+
+.clues li::before {
+  content: "🔍";
+  position: absolute;
+  left: 0;
+}
+
+.puzzle-body {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  border: 2px solid #8B0000;
+  color: #e0e0e0;
+}
+
+/* ========================
+   FORMULÁRIOS
+   ======================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.input-field {
+  padding: 0.75rem 1rem;
+  border: 2px solid #8B0000;
+  border-radius: var(--radius);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.3);
+}
+
+select.input-field {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 20px;
+  padding-right: 2.5rem;
+}
+
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--light-2);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--primary-dark);
+  transform: scale(1.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--primary-dark);
+  transform: scale(1.2);
+}
+
+/* ========================
+   BOTÕES
+   ======================== */
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #A00000 0%, #8B0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  color: #d0d0d0;
+  border: 2px solid #8B0000;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+  color: #FFD700;
+  border-color: #FFD700;
+  transform: translateY(-2px);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-actions .btn {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* ========================
+   PUZZLE 1 - CIFRA CÉSAR
+   ======================== */
+
+.cipher-display,
+.decrypted-display,
+.sequence-display {
+  margin-bottom: 1.5rem;
+}
+
+.cipher-box,
+.code-box {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary);
+  font-family: "Courier New", monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  word-break: break-all;
+  text-align: center;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+/* ========================
+   PUZZLE 2 - CORRESPONDÊNCIA
+   ======================== */
+
+.puzzle2-person {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  border: 1px solid #8B0000;
+  color: #e0e0e0;
+}
+
+.puzzle2-person h3 {
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+/* ========================
+   PUZZLE 3 - SEQUÊNCIA
+   ======================== */
+
+.sequence-numbers {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  border: 1px solid #8B0000;
+}
+
+.seq-num {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #FFD700;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+  border: 2px solid #8B0000;
+}
+
+/* ========================
+   RESULTADOS
+   ======================== */
+
+.puzzle-result {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  animation: slideDown 0.4s ease;
+  border: 2px solid #8B0000;
+  color: #e0e0e0;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.puzzle-result.success {
+  border-top: 4px solid #FFD700;
+}
+
+.puzzle-result h3 {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.puzzle-result p {
+  color: #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+.code-part {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 1.5rem 0;
+  border: 1px solid #8B0000;
+}
+
+.code-part p {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(#ece3e3);
+}
+
+.code-box {
+  margin: 0;
+  border-left: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.explanation {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.explanation h4 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.explanation p {
+  color: var(--dark);
+}
+
+/* ========================
+   VOUCHER
+   ======================== */
+
+.voucher-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.voucher-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.voucher-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.voucher-seal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.voucher-body {
+  padding: 2rem 1.5rem;
+}
+
+.voucher-recipients,
+.voucher-details {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--light-2);
+}
+
+.voucher-recipients p,
+.voucher-details p {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.voucher-recipients strong,
+.voucher-details strong {
+  color: var(--primary);
+}
+
+.voucher-content {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-style: italic;
+  color: var(--medium);
+}
+
+.voucher-code {
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+}
+
+.voucher-code-value {
+  color: var(--primary);
+  background: var(--light);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.voucher-footer {
+  background: var(--light);
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Crime Investigation Theme Styling */
+.voucher-card.crime-themed {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 3px solid #8B0000;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.crime-header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 100%);
+  color: #FFD700;
+  border-bottom: 3px solid #DC143C;
+}
+
+.crime-header h2 {
+  color: #FFD700;
+}
+
+.crime-body {
+  background: linear-gradient(to bottom, #2d2d2d 0%, #1a1a1a 100%);
+  color: #e0e0e0;
+}
+
+.crime-body .voucher-recipients p,
+.crime-body .voucher-details p {
+  color: #e0e0e0;
+}
+
+.crime-body .voucher-recipients strong,
+.crime-body .voucher-details strong {
+  color: #FFD700;
+}
+
+.crime-footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #8B0000 50%);
+  color: #FFD700;
+  border-top: 3px solid #DC143C;
+}
+
+.crime-ribbon {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+.voucher-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.voucher-actions .btn {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ========================
+   FORMULÁRIO DE DATAS
+   ======================== */
+
+.celebration {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  margin-top: 2rem;
+  border: 2px solid #8B0000;
+  color: #e0e0e0;
+}
+
+.celebration h3 {
+  color: #FFD700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, serif;
+}
+
+.form-notice {
+  background: linear-gradient(135deg, #4d2d00 0%, #3d1d00 100%);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid #DC143C;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+}
+
+.form-status {
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.form-status.success {
+  background: linear-gradient(135deg, #1a4d1a 0%, #0f3d0f 100%);
+  color: #FFD700;
+  border-left: 4px solid #FFD700;
+}
+
+.form-status.error {
+  background: linear-gradient(135deg, #4d1a1a 0%, #3d0f0f 100%);
+  color: #FFD700;
+  border-left: 4px solid #FF4500;
+}
+
+/* ========================
+   TOASTS (NOTIFICAÇÕES)
+   ======================== */
+
+.toast {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  max-width: 90%;
+  transition: bottom 0.3s ease;
+  animation: toastSlide 0.3s ease;
+}
+
+@keyframes toastSlide {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 30px;
+  }
+}
+
+.toast.show {
+  animation: toastSlideOut 0.3s ease forwards;
+}
+
+@keyframes toastSlideOut {
+  0% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
+
+.toast-success {
+  background: var(--secondary);
+}
+
+.toast-error {
+  background: var(--danger);
+}
+
+.toast-warning {
+  background: var(--warning);
+}
+
+.toast-info {
+  background: var(--primary);
+}
+
+/* ========================
+   CONFETTI
+   ======================== */
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 999;
+  animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ========================
+   HOME SECTION
+   ======================== */
+
+.home-intro {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  border: 2px solid #8B0000;
+}
+
+.home-intro h2 {
+  color: #FFD700;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+}
+
+.home-intro p {
+  color: #d0d0d0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.steps-overview {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .steps-overview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-card {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+  border: 2px solid #8B0000;
+  color: #e0e0e0;
+  transition: var(--transition);
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  border-color: #FFD700;
+}
+
+.step-card.completed {
+  background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+  border: 2px solid #FFD700;
+  color: #1a1a1a;
+}
+
+.step-card .step-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.step-card.completed .step-number {
+  color: #1a1a1a;
+}
+
+.step-card .step-title {
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+}
+
+.step-card .step-status {
+  font-size: 0.85rem;
+  color: #d0d0d0;
+}
+
+.step-card.completed .step-status {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* ========================
+   RESPONSIVIDADE
+   ======================== */
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .progress-bar {
+    gap: 0.3rem;
+  }
+
+  .progress-step {
+    padding: 0.75rem 0.5rem;
+    min-width: 80px;
+    font-size: 0.7rem;
+  }
+
+  .puzzle-description,
+  .puzzle-body {
+    padding: 1.5rem;
+  }
+
+  .voucher-card {
+    margin: 1rem 0;
+  }
+
+  .voucher-actions .btn {
+    min-width: 120px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .puzzle-description h2 {
+    font-size: 1.4rem;
+  }
+
+  .step-card .step-number {
+    font-size: 2rem;
+  }
+
+  .sequence-numbers {
+    gap: 0.5rem;
+  }
+
+  .seq-num {
+    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ========================
+   ESTILOS PARA IMPRESSÃO
+   ======================== */
+
+@media print {
+  * {
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  header,
+  footer,
+  .btn,
+  .progress-bar,
+  .form-actions,
+  .voucher-actions,
+  .celebration,
+  .puzzle-body > :not(.voucher-card),
+  main > :not(.voucher-card) {
+    display: none !important;
+  }
+
+  .voucher-card {
+    margin: 0;
+    border: none;
+    max-width: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .voucher-card,
+  [data-section] {
+    display: block !important;
+  }
+}
+
+/* ========================
+   ACESSIBILIDADE
+   ======================== */
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.btn:focus-visible {
+  outline-offset: 4px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: #1e293b;
+    --light-2: #334155;
+    --dark: #f1f5f9;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  header {
+    background: var(--dark);
+  }
+
+  .input-field,
+  .cipher-box,
+  .code-box,
+  .puzzle2-person {
+    background: var(--light);
+    border-color: var(--light-2);
+    color: var(--dark);
+  }
+
+  .puzzle-description,
+  .puzzle-body,
+  .step-card,
+  .voucher-card,
+  .celebration {
+    background: var(--light);
+    color: var(--dark);
+  }
+}

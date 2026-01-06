@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solve 3 logic puzzles to earn a secret code and unlock your next instructions!">
+  <meta name="theme-color" content="#6366f1">
+  <title>Logic Challenge - Escape Puzzle</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- HEADER COM BARRA DE PROGRESSO -->
+  <header>
+    <h1>🏛️Logic Challenge🏛️ </h1>
+    <nav class="progress-bar" role="progressbar" aria-label="Progresso do jogo">
+      <div class="progress-step" data-step="1">
+        <span class="step-label">Step 1</span>
+      </div>
+      <div class="progress-step" data-step="2">
+        <span class="step-label">Step 2</span>
+      </div>
+      <div class="progress-step" data-step="3">
+        <span class="step-label">Step 3</span>
+      </div>
+      <div class="progress-step" data-step="final">
+        <span class="step-label">Final</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main role="main">
+    <!-- SECÇÃO HOME/INÍCIO -->
+    <section data-section="home" class="section-home">
+      <div class="home-intro">
+        <h2>Welcome! 👋</h2>
+        <p>Let's see if you are worth of a big responsability... </p>
+        <p>Solve this 3 logic challenges. Each completed challenge gives you one part of a secret code.</p>
+        <p>At the end, enter the full code and follow the instructions!</p>
+        <button class="btn btn-primary" id="start-btn">Start Challenge →</button>
+      </div>
+
+      <div class="steps-overview">
+        <div class="step-card" id="card-step-1">
+          <div class="step-number">1</div>
+          <div class="step-title">Sequence</div>
+          <div class="step-status">Find the pattern</div>
+        </div>
+        <div class="step-card" id="card-step-2">
+          <div class="step-number">2</div>
+          <div class="step-title">Matching</div>
+          <div class="step-status">Solve the associations</div>
+        </div>
+        <div class="step-card" id="card-step-3">
+          <div class="step-number">3</div>
+          <div class="step-title">Encoded Message</div>
+          <div class="step-status">Apply the encoding pattern</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO PUZZLE 1 -->
+    <section data-section="puzzle1" class="section-puzzle1">
+      <div id="puzzle1-content">
+        <!-- Carregado dinamicamente por setupPuzzle1() -->
+      </div>
+    </section>
+
+    <!-- SECÇÃO PUZZLE 2 -->
+    <section data-section="puzzle2" class="section-puzzle2">
+      <div id="puzzle2-content">
+        <!-- Carregado dinamicamente por setupPuzzle2() -->
+      </div>
+    </section>
+
+    <!-- SECÇÃO PUZZLE 3 -->
+    <section data-section="puzzle3" class="section-puzzle3">
+      <div id="puzzle3-content">
+        <!-- Carregado dinamicamente por setupPuzzle3() -->
+      </div>
+    </section>
+
+    <!-- SECÇÃO FINAL - VOUCHER -->
+    <section data-section="final" class="section-final">
+      <div id="final-content">
+        <!-- Carregado dinamicamente por setupFinalSection() -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Gift Challenge</p>
+    <button class="btn btn-secondary" id="reset-btn">🔄 Reset Game</button>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="assets/utils.js"></script>
+  <script src="assets/puzzles.js"></script>
+  <script src="assets/voucher.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

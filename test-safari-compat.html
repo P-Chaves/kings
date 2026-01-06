@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testes de Compatibilidade Safari</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 50px auto; padding: 20px; }
+    .test { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+    .test.pass { background: #d4edda; border-color: #28a745; }
+    .test.fail { background: #f8d7da; border-color: #dc3545; }
+    .test.warn { background: #fff3cd; border-color: #ffc107; }
+    h2 { color: #333; }
+    pre { background: #f5f5f5; padding: 10px; overflow-x: auto; }
+    button { padding: 10px 20px; margin: 5px; cursor: pointer; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Testes de Compatibilidade Safari (Simulado)</h1>
+  <p>Estes testes simulam um ambiente Safari antigo ou WebView sem certas funcionalidades.</p>
+  
+  <div id="results"></div>
+
+  <script src="assets/utils.js"></script>
+  <script>
+    const results = [];
+
+    // Teste 1: Verificar se fetch nativo existe
+    function test1_FetchNative() {
+      const pass = typeof window.fetch === 'function';
+      results.push({
+        name: '1. Fetch Nativo',
+        pass: pass,
+        details: pass ? 'window.fetch está disponível ✓' : 'window.fetch NÃO está disponível (usará XHR fallback)'
+      });
+    }
+
+    // Teste 2: Testar fetchWithFallback com fetch nativo
+    async function test2_FetchWithFallback() {
+      try {
+        // Teste um call simples (GET a index.html)
+        const response = await fetchWithFallback('index.html');
+        const pass = response.ok;
+        results.push({
+          name: '2. fetchWithFallback (com fetch nativo)',
+          pass: pass,
+          details: pass ? `Resposta OK (status ${response.status}) ✓` : `Erro na resposta (status ${response.status})`
+        });
+      } catch (e) {
+        results.push({
+          name: '2. fetchWithFallback (com fetch nativo)',
+          pass: false,
+          details: `Erro: ${e.message}`
+        });
+      }
+    }
+
+    // Teste 3: Simular ausência de fetch e testar fallback XHR
+    async function test3_XHRFallback() {
+      const originalFetch = window.fetch;
+      try {
+        // Remove temporariamente window.fetch
+        delete window.fetch;
+        
+        const response = await fetchWithFallback('index.html');
+        const pass = response.ok || response.status === 200;
+        results.push({
+          name: '3. fetchWithFallback (XHR fallback, sem fetch)',
+          pass: pass,
+          details: pass ? `Fallback XHR funcionou! (status ${response.status}) ✓` : `Erro no fallback`
+        });
+      } catch (e) {
+        results.push({
+          name: '3. fetchWithFallback (XHR fallback, sem fetch)',
+          pass: false,
+          details: `Erro no fallback: ${e.message}`
+        });
+      } finally {
+        // Restaurar fetch
+        window.fetch = originalFetch;
+      }
+    }
+
+    // Teste 4: Verificar suporte a input[type=date]
+    function test4_DateInputSupport() {
+      const supported = isDateInputSupported();
+      results.push({
+        name: '4. Suporte a input[type=date]',
+        pass: supported,
+        details: supported ? 'input[type=date] está suportado ✓' : 'input[type=date] NÃO está suportado (usará fallback text)'
+      });
+    }
+
+    // Teste 5: Normalização de strings com acentos
+    function test5_StringNormalize() {
+      try {
+        const test = normalizeString("Café Açúcar");
+        const expected = "CAFE ACUCAR";
+        const pass = test === expected;
+        results.push({
+          name: '5. Normalização de Strings (acentos)',
+          pass: pass,
+          details: pass ? `"${test}" ✓` : `Esperado "${expected}", obteve "${test}"`
+        });
+      } catch (e) {
+        results.push({
+          name: '5. Normalização de Strings',
+          pass: false,
+          details: `Erro: ${e.message}`
+        });
+      }
+    }
+
+    // Teste 6: LocalStorage (crítico para persistência)
+    function test6_LocalStorage() {
+      try {
+        const testKey = '__safari_test_' + Date.now();
+        localStorage.setItem(testKey, 'test');
+        const value = localStorage.getItem(testKey);
+        localStorage.removeItem(testKey);
+        const pass = value === 'test';
+        results.push({
+          name: '6. LocalStorage',
+          pass: pass,
+          details: pass ? 'LocalStorage funciona ✓' : 'LocalStorage falhou'
+        });
+      } catch (e) {
+        results.push({
+          name: '6. LocalStorage',
+          pass: false,
+          details: `Erro: ${e.message} (modo privado?)`
+        });
+      }
+    }
+
+    // Teste 7: Validação de código final
+    function test7_CodeValidation() {
+      try {
+        const valid = validateFinalCode("NOITE-PALCO-LIVRE");
+        const invalid = validateFinalCode("ERRADO-ERRADO-ERRADO");
+        const pass = valid === true && invalid === false;
+        results.push({
+          name: '7. Validação de Código Final',
+          pass: pass,
+          details: pass ? 'Validação funciona correctamente ✓' : 'Validação com problemas'
+        });
+      } catch (e) {
+        results.push({
+          name: '7. Validação',
+          pass: false,
+          details: `Erro: ${e.message}`
+        });
+      }
+    }
+
+    // Executar todos os testes
+    async function runAllTests() {
+      test1_FetchNative();
+      await test2_FetchWithFallback();
+      await test3_XHRFallback();
+      test4_DateInputSupport();
+      test5_StringNormalize();
+      test6_LocalStorage();
+      test7_CodeValidation();
+
+      // Render dos resultados
+      const resultsDiv = document.getElementById('results');
+      const totalPass = results.filter(r => r.pass).length;
+      const totalTests = results.length;
+
+      let html = `<h2>Resultados: ${totalPass}/${totalTests} passou ✓</h2>`;
+
+      results.forEach(result => {
+        const cssClass = result.pass ? 'pass' : 'fail';
+        html += `
+          <div class="test ${cssClass}">
+            <h3>${result.name}</h3>
+            <p>${result.details}</p>
+          </div>
+        `;
+      });
+
+      // Resumo
+      const allPass = totalPass === totalTests;
+      html += `
+        <div class="test ${allPass ? 'pass' : 'warn'}">
+          <h3>${allPass ? '✅ Tudo OK para Safari!' : '⚠️ Atenção'}</h3>
+          <p>${allPass ? 
+            'O projeto está optimizado para Safari moderno e tem fallbacks para versões antigas.' :
+            'Alguns problemas detectados. Revê os detalhes acima.'
+          }</p>
+        </div>
+      `;
+
+      resultsDiv.innerHTML = html;
+    }
+
+    // Executar testes quando página carrega
+    window.addEventListener('load', runAllTests);
+  </script>
+</body>
+</html>
