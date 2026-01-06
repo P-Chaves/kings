@@ -327,7 +327,7 @@ function setupPuzzle2() {
     }
 
     if (!ok) {
-      feedback.innerHTML = `<div class="puzzle-feedback error">❌ Still not right. Review the clues and try again.</div>`;
+      feedback.innerHTML = `<div class="puzzle-feedback error">❌ Still not right. Review the clues and try again...</div>`;
       if (hintDiv) hintDiv.innerHTML = "";
       return;
     }
