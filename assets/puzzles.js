@@ -127,7 +127,7 @@ function setupPuzzle2() {
       "The <strong>98-year-old</strong> suspect used <strong>Formix</strong> as poison.",
       "The suspect who used <strong>Baratrez</strong> is to the left of the one who used <strong>Ratax</strong>.",
       "The suspect who used <strong>Formix</strong> is in a position where <strong>no positions are to his right</strong>.",
-      "Mr. <strong>Dona Clotilde</strong> is at one of the <strong>ends</strong> of the table.",
+      "<strong>Dona Clotilde</strong> is at one of the <strong>ends</strong> of the table.",
       "Mr. <strong>Zé da Tripa</strong> is not <strong>suspect 3</strong>.",
       "The suspect who poisoned the <strong>Ovos moles</strong> is to the left of whoever poisoned the <strong>Croissant de Leitão</strong>."
     ],
