@@ -3,7 +3,7 @@ name: Deploy para GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 # Define permissões necessárias para o deployment do GitHub Pages
