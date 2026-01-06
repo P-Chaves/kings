@@ -1067,3 +1067,109 @@ textarea:focus-visible {
     color: var(--dark);
   }
 }
+
+/* Puzzle 2 Table Styling */
+.puzzle2-table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  background: #0f0f0f;
+}
+
+.puzzle2-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.puzzle2-table th {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: var(--secondary);
+  padding: 1rem 0.75rem;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+}
+
+.puzzle2-table th:first-child {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.puzzle2-table td {
+  padding: 0.75rem;
+  border: 1px solid #333;
+  text-align: center;
+  background: #1a1a1a;
+}
+
+.puzzle2-table td.attr-label {
+  background: #252525;
+  font-weight: 600;
+  color: var(--secondary);
+  text-align: left;
+  padding-left: 1rem;
+  min-width: 100px;
+}
+
+.puzzle2-table .table-select {
+  width: 95%;
+  padding: 0.5rem;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.puzzle2-table .table-select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 4px var(--secondary);
+}
+
+.puzzle2-table .table-select:disabled {
+  background: #333;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.puzzle2-table tbody tr:hover {
+  background: #242424;
+}
+
+/* Puzzle 2 Hint & Killer Chooser */
+.puzzle-hint {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #2d2d2d, #1f1f1f);
+  border-left: 4px solid var(--secondary);
+  border-radius: var(--radius);
+}
+
+.puzzle-hint .hint {
+  font-style: italic;
+  color: var(--secondary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.killer-chooser {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--primary);
+}
+
+.killer-chooser label {
+  display: block;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.killer-chooser select {
+  min-width: 180px;
+}

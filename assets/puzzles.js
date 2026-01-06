@@ -41,7 +41,6 @@ function setupPuzzle1() {
       </div>
 
       <button class="btn btn-primary" id="puzzle1-submit">Check Answer</button>
-      <button class="btn btn-secondary" id="puzzle1-skip">Skip</button>
     </div>
   `;
 
@@ -55,10 +54,6 @@ function setupPuzzle1() {
     } else {
       toast("Incorrect answer. The number was: " + data.correctAnswer, "error");
     }
-  });
-
-  document.getElementById("puzzle1-skip").addEventListener("click", () => {
-    showSection("puzzle2");
   });
 }
 
@@ -353,8 +348,8 @@ function setupPuzzle2() {
         </div>
       `;
 
-      // disable the main validate button to avoid re-entry
-      if (btnCheck) btnCheck.disabled = true;
+      // hide the main validate button after successful validation
+      if (btnCheck) btnCheck.style.display = "none";
 
       // attach listener for killer submission
       const killerBtn = document.getElementById("puzzle2-killer-submit");
@@ -419,7 +414,6 @@ function setupPuzzle3() {
       </div>
 
       <button class="btn btn-primary" id="puzzle3-submit">Check Answer</button>
-      <button class="btn btn-secondary" id="puzzle3-skip">Skip</button>
     </div>
   `;
 
@@ -433,10 +427,6 @@ function setupPuzzle3() {
     } else {
       toast("Incorrect answer. Try again!", "error");
     }
-  });
-
-  document.getElementById("puzzle3-skip").addEventListener("click", () => {
-    showSection("final");
   });
 }
 

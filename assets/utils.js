@@ -3,12 +3,12 @@
  */
 const CONFIG = {
   // Gift recipients and customization
-  recipient1: "EDITAR_AQUI - Name of Sister",
-  recipient2: "EDITAR_AQUI - Name of Husband",
-  fromName: "EDITAR_AQUI - Your name",
-  voucherTitle: "A Special Gift",
-  voucherText: "This gift entitles you to something special that has been carefully chosen just for you.",
-  validityText: "Valid until December 31, 2026",
+  recipient1: "Rita",
+  recipient2: "Julian",
+  fromName: "Pedro",
+  voucherTitle: "Life Time Opportunity",
+  voucherText: "Both of you have demonstrated the intelligence and wit needed to be part of the jury. Step into a thrilling courtroom drama where the audience is the jury. Listen to testimonies, analyze evidence, and ultimately decide… guilty or not guilty?.",
+  juryText: "Send me a message on WhatsApp to claim your gift! 🎁",
   
   // Partes do código final (obtidas dos puzzles)
   finalCode: {
@@ -17,10 +17,7 @@ const CONFIG = {
     part3: "GUILTY"
   },
   
-  // Endpoints e URLs externas
-  formspreeEndpoint: "https://formspree.io/f/EDITAR_AQUI", // Substitui com o teu ID do Formspree
-  googleFormUrl: "", // Deixa vazio ou adiciona URL do Google Forms
-  voucherDownloadUrl: "" // Deixa vazio ou adiciona link a PDF não listado
+  
 };
 
 /**
@@ -87,6 +84,8 @@ function unlockVoucher() {
  */
 function resetAll() {
   localStorage.removeItem("progress");
+  localStorage.removeItem("puzzle2_solved");
+  localStorage.removeItem("puzzle2_codePart");
 }
 
 /**

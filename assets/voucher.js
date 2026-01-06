@@ -8,8 +8,8 @@ function setupFinalSection() {
   
   let contentHtml = `
     <div class="puzzle-description">
-      <h2>Final Challenge: Unlock the Gift</h2>
-      <p>You've solved the 3 challenges! Now enter the final code to unlock your surprise gift.</p>
+      <h2>Final Challenge</h2>
+      <p>You've solved the 3 challenges! Now enter the final code to prove you have a brain.</p>
     </div>
   `;
   
@@ -21,7 +21,7 @@ function setupFinalSection() {
           
           <div class="form-group">
             <label for="final-code-input">Final Code:</label>
-            <input type="text" id="final-code-input" class="input-field" placeholder="Example: NIGHT-STAGE-FREE" autocomplete="off">
+            <input type="text" id="final-code-input" class="input-field" placeholder="Example: WRITE-LIKE-THIS" autocomplete="off">
           </div>
           
           <button class="btn btn-primary" id="unlock-btn">Unlock Gift</button>
@@ -71,30 +71,49 @@ function renderVoucher() {
           <div class="crime-ribbon" style="background: linear-gradient(90deg, #8B0000, #DC143C); padding: 10px; text-align: center; color: white; font-weight: bold; margin: -2rem -2rem 1.5rem -2rem; font-size: 0.9rem;">EVIDENCE #001 - CONFIDENTIAL</div>
           
           <div class="voucher-recipients">
-            <p><strong>Para:</strong> ${CONFIG.recipient1} & ${CONFIG.recipient2}</p>
-            <p><strong>De:</strong> ${CONFIG.fromName}</p>
+            <p><strong>TO:</strong> ${CONFIG.recipient1} & ${CONFIG.recipient2}</p>
+            <p><strong>FROM:</strong> ${CONFIG.fromName}</p>
           </div>
           
           <div class="voucher-content" style="border: 2px dashed #8B0000; padding: 1rem; background: #fff8f8; margin: 1rem 0;">
             <p style="font-family: 'Georgia', serif; font-style: italic;">${CONFIG.voucherText}</p>
           </div>
           
-          <div class="voucher-details" style="border-top: 2px solid #DC143C; padding-top: 1rem;">
-            <p><strong>⏰ CASE DEADLINE:</strong> ${CONFIG.validityText}</p>
-            <p class="voucher-code" style="background: #f0f0f0; padding: 0.5rem; margin-top: 0.5rem; font-family: 'Courier New', monospace; border-left: 4px solid #8B0000;">CASE CODE: <span class="voucher-code-value" style="color: #8B0000;">GUILTY-2026</span></p>
+          <div class="voucher-details" style="border: 3px solid #8B0000; background: linear-gradient(135deg, #FFD700, #FFC700); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; text-align: center; box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);">
+           <p>  <span style="    font-size: 1.4rem;    font-weight: 900;    color: #8B0000;    background: linear-gradient(90deg, #fff1f1, #ffffff, #fff1f1); padding: 0.3rem 0.6rem;
+    border-radius: 8px;    box-shadow: 0 0 0 2px rgba(139,0,0,0.25);    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);  ">    🎭 You will have the honor to be at
+    <span style="      text-decoration: underline;      text-decoration-thickness: 4px;      text-underline-offset: 4px;
+      The Jury Experience: Murder Case - Valencia
+    </span>
+    🎭
+  </span>
+</p>
+ <p style="font-size: 1.1rem; color: #2d0000; margin-top: 0.5rem; font-style: italic; font-weight: bold;">${CONFIG.juryText}</p>
+           
+     
           </div>
         </div>
         
         <div class="voucher-footer crime-footer">
-          <p style="font-family: 'Georgia', serif; font-style: italic; color: #8B0000;">⚖️ Justice Awaits on Stage! 🎭</p>
-        </div>
+          <p style="
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  display: inline-block;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  letter-spacing: 0.3px;
+  margin: 0.5rem 0;
+">
+  ⚖️ Justice Awaits on Stage! 🎭
+</p> </div>
       </div>
       
-      <div class="celebration">
-        <h3>🎉 Congratulations!</h3>
-        <p>Both of you have demonstrated the intelligence and wit needed to be worthy of this special gift.</p>
-        <p style="margin-top: 20px; font-size: 18px; color: #6366f1;"><strong>Send me a message on WhatsApp to claim your gift! 🎁</strong></p>
-      </div>
+      
     </div>
   `;
 }
