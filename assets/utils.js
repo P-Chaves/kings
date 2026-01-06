@@ -8,7 +8,8 @@ const CONFIG = {
   fromName: "Pedro",
   voucherTitle: "Life Time Opportunity",
   voucherText: "Both of you have demonstrated the intelligence and wit needed to be part of the jury. Step into a thrilling courtroom drama where the audience is the jury. Listen to testimonies, analyze evidence, and ultimately decide… guilty or not guilty?.",
-  juryText: "Send me a message on WhatsApp to claim your gift! 🎁",
+  juryText: "Send a message to Cunhados on WhatsApp with the message 'I love Croissant de Leitão' to claim your gift!"
+,
   
   // Partes do código final (obtidas dos puzzles)
   finalCode: {
@@ -141,10 +142,10 @@ function updateProgressBar(currentSection) {
 function updateProgressStepStatus() {
   const progress = getProgress();
   const stepTexts = [
-    `Etapa 1: ${progress.p1 ? "✓ Completo" : "Aguardando"}`,
-    `Etapa 2: ${progress.p2 ? "✓ Completo" : "Aguardando"}`,
-    `Etapa 3: ${progress.p3 ? "✓ Completo" : "Aguardando"}`,
-    `Final: ${progress.unlocked ? "✓ Desbloqueado" : "Aguardando"}`
+    `Step 1: ${progress.p1 ? "✓ Complete" : "Awaiting"}`,
+    `Step 2: ${progress.p2 ? "✓ Complete" : "Awaiting"}`,
+    `Step 3: ${progress.p3 ? "✓ Complete" : "Awaiting"}`,
+    `Final: ${progress.unlocked ? "✓ Unlocked" : "Awaiting"}`
   ];
   
   document.querySelectorAll(".progress-step").forEach((step, idx) => {

@@ -396,7 +396,7 @@ function setupPuzzle3() {
   const descriptionHtml = `
     <div class="puzzle-description">
       <h2>Challenge 3: Encoded Message</h2>
-      <p>Here is a message encoded by the 3 Kings. Decode it and write the original word hidden between quotes.</p>
+      <p>One of the oldest tricks in the book...But today is the "Three Kings" day, maybe they are willing to help. Decode it and write the original word hidden between quotes.</p>
       <p> </p>
     </div>
   `;
@@ -444,7 +444,7 @@ function showPuzzle3Result(success, codePart) {
         <p>Third part of the code:</p>
         <div class="code-box">${codePart}</div>
       </div>
-      <button class="btn btn-primary" id="puzzle3-next">Go to Voucher →</button>
+      <button class="btn btn-primary" id="puzzle3-next">Go on, you can advance.. →</button>
     </div>
   `;
   

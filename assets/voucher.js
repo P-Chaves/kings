@@ -24,7 +24,7 @@ function setupFinalSection() {
             <input type="text" id="final-code-input" class="input-field" placeholder="Example: WRITE-LIKE-THIS" autocomplete="off">
           </div>
           
-          <button class="btn btn-primary" id="unlock-btn">Unlock Gift</button>
+          <button class="btn btn-primary" id="unlock-btn">Let's See!</button>
         </div>
       </div>
     `;
@@ -80,14 +80,38 @@ function renderVoucher() {
           </div>
           
           <div class="voucher-details" style="border: 3px solid #8B0000; background: linear-gradient(135deg, #FFD700, #FFC700); padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; text-align: center; box-shadow: 0 4px 8px rgba(139, 0, 0, 0.3);">
-           <p>  <span style="    font-size: 1.4rem;    font-weight: 900;    color: #8B0000;    background: linear-gradient(90deg, #fff1f1, #ffffff, #fff1f1); padding: 0.3rem 0.6rem;
-    border-radius: 8px;    box-shadow: 0 0 0 2px rgba(139,0,0,0.25);    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);  ">    🎭 You will have the honor to be at
-    <span style="      text-decoration: underline;      text-decoration-thickness: 4px;      text-underline-offset: 4px;
-      The Jury Experience: Murder Case - Valencia
-    </span>
-    🎭
+           <p>
+  <span style="
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #8B0000;
+    background: linear-gradient(90deg, #fff1f1, #ffffff, #fff1f1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px rgba(139,0,0,0.25);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+    display: inline-block;
+  ">
+     You both will have the honor to be at
+   <span style=" font-size: 1.4rem;
+    font-weight: 900;
+    color: #8B0000;
+    
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+ 
+   
+    display: inline-block;
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 4px;
+    "
+     > 🎭 The Jury Experience: Murder Case - Valencia 🎭</span>
+    
   </span>
 </p>
+
+
  <p style="font-size: 1.1rem; color: #2d0000; margin-top: 0.5rem; font-style: italic; font-weight: bold;">${CONFIG.juryText}</p>
            
      
