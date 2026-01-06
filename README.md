@@ -41,11 +41,17 @@ Não precisa de servidor, build tools ou npm!
 
 ### Publicar em GitHub Pages
 
-1. Faz fork/clone deste repositório para a tua conta GitHub
-2. Vai a **Settings → Pages**
-3. Em **Source**, seleciona `main` (ou a branch que usas) e pasta `/` (root)
-4. Clica **Save**
-5. O site estará disponível em `https://username.github.io/nome-repositorio`
+Este repositório já está configurado para deploy automático no GitHub Pages!
+
+**Ver guia completo:** [SETUP_GITHUB_PAGES.md](SETUP_GITHUB_PAGES.md)
+
+**Resumo rápido:**
+1. Vai a **Settings → Pages** no teu repositório GitHub
+2. Em **Source**, seleciona **"GitHub Actions"**
+3. Faz push para `main` (ou merge este PR)
+4. O site estará disponível em `https://p-chaves.github.io/kings/`
+
+O deploy é automático sempre que fazes push para `main`!
 
 ## ⚙️ Personalização Rápida
 
